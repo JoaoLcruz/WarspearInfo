@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #23232e;
+}
+
+a {
+    color: #ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar-lista {
+    list-style: none;
+    display: flex;
+}
+.navbar-lista li {
+    letter-spacing: 3px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background: #23232e;
+    height: 12vh;
+}
+
+.conteiner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(36, 36, 77);
+}
+
+.tituloClasse {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloClasse b {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #ffff;
+}
+
+.tituloRaca {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.tituloRaca b {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ffff;
+}
+
+.tituloLegiao {
+    width: 50%;
+    height: 20vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tituloLegiao b {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #ffff;
+}
+
+.cardClasse1 {
+    width: 80%;
+    height: 350px;
+    border: 2px solid rgb(218, 200, 80);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.tituloSentinelas {
+    width: 50%;
+    height: 20vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tituloSentinelas b {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #ffff;
+}
+
+.cardClasse2 {
+    width: 80%;
+    height: 350px;
+    border: 2px solid rgb(218, 200, 80);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.classes-grupo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.classes-grupo img {
+    width: 25%;
+}
+
+.classes-grupo b {
+    font-size: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #ffff;
+}
+
+.classes-grupo a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

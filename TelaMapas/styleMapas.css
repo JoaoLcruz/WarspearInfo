@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #23232e;
+}
+
+a {
+    color: #ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar-lista {
+    list-style: none;
+    display: flex;
+}
+.navbar-lista li {
+    letter-spacing: 3px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background: #23232e;
+    height: 12vh;
+}
+
+
+.containerMapas {
+    width: 100%;
+    height: 100%;
+}
+
+.logo1 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.card1 img {
+    width: 80%;
+}
+
+.img-legiao {
+    width: 50%;
+    height: 100%;
+}
+
+.imagem {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem img {
+    border-radius: 25px;
+}
+
+.text-legiao {
+    width: 50%;
+    height: 100%;
+}
+
+.text {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text b{
+    color: #ffff;
+    width: 80%;
+}
+
+
+
+.logo2 {
+    width: 80% ;
+    padding: 5% 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.card2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+.card2 img {
+    width: 80%;
+}
+
+.text-elfos {
+    width: 50%;
+    height: 100%;
+}
+
+.text2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text2 b{
+    color: #ffff;
+    width: 80%;
+}
+
+.logo3 {
+    width: 100%;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-mp2 {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img-mp2 img {
+    width: 80%;
+    border-radius: 25px;
+}
+
+.texto-Mapa2 {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text3 {
+    width: 80%;
+}
+
+.text3 b {
+    color: #ffff;
+}

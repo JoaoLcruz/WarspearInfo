@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-image: url(./img-log.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    color: #ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar-lista {
+    list-style: none;
+    display: flex;
+}
+.navbar-lista li {
+    letter-spacing: 3px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background: #23232e;
+    height: 12vh;
+}
+.container {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 27%;
+    height: auto;
+    overflow: hidden;
+}
+
+.titleLog {
+    background-color: #23232e;
+    padding: 20px;
+    
+}
+
+.titleLog h2 {
+    color: #ffff;
+}
+
+.form {
+    margin: 0px 8px 0 10px;
+    padding: 10px;
+}
+
+
+.estrutura label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.estrutura input {
+    border: 2px solid #f0f0f0;
+    display: block;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 93%;
+    padding: 10px;
+}
+
+
+
+.estrutura small {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.form button {
+    display: flex;
+    justify-content: center;
+    background-color: #969696;
+    border: 2px solid #f0f0f0;
+    color: #ffff;
+    font-size: 14px;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #23232e;
+}
+
+.btn a {
+    color: blue;
+    text-transform: uppercase;
+}
+
+.estrutura.sucesso input {
+    border-color: #2ecc71;
+}
+.estrutura.erro input {
+    border-color: #e74c3c;
+}
+
+.estrutura.sucesso i.fa-solid-fa-staff {
+    color: #2ecc71;
+    visibility: visible;
+}
+.estrutura.erro i.fa-solid-fa-swords {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.estrutura.erro small {
+    visibility: visible;
+    color: #e74c3c;
+}
