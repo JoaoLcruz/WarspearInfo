@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/index.html" class="link-navbar btn"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/index.html" class="link-navbar btn"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+    <div class="tituloClasse">
+        <b>Cavaleiros da Morte</b>
+    </div> 
+        <img src="./img-classes/Capturar.PNG" alt="">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+                </div>
+            </div>
+            <div class="parteBaixo">
+                <div class="texto">
+                    <div class="status" id="personagemStatus"></div>
+                </div>
+                <div class="texto2">
+                    <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                    <b>
+                        Cavaleiros da Morte foram poderosos guerreiros na vida, que caíram em batalha e, em seguida, foram ressuscitados por Necromantes. 
+                        Qualquer um que recebeu tal destino teve que restaurar suas habilidades de combate de guerra, bem como parte de sua memória na 
+                        sinistra Casa da Fúria, uma fortaleza que está ao lado do fosso sem fundo do Abismo de Moraktar. Não conhecendo medo e dor, os 
+                        guerreiros sombrios são obcecados com o seu único propósito, que é a de destruir toda a vida, porque o ódio é o único sentimento 
+                        deixado após a morte. Suas lâminas tornam-se vermelhas de sangue dos inimigos quando eles estão abrindo o caminho no campo de 
+                        batalha, acrescentando aço para as cortes da Legião. Poucas pessoas poderiam se levantar contra a própria Escuridão, que protege os
+                        Cavaleiros da Morte.
+                    </b>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var personagem = {
+        Facção: 'Facção: Proscritos',
+        Armadura: 'Armadura: pesada e  leve',
+        Armas: 'Armas: machados de uma mão/duas mãos, espadas de uma mão/duas mãos, maças de uma mão/duas mãos, lança, escudo',
+        Função: 'Função: guerreiro / tank'
+        
+    }
+    personagemStatus.innerHTML = `${personagem.Facção}<br><br>
+    ${personagem.Armadura}<br><br>
+    ${personagem.Armas}<br><br>
+    ${personagem.Função}`
+    
+    
+</script>
