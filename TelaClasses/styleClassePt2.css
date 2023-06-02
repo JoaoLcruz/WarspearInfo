@@ -8,7 +8,7 @@ html{
 }
 
 body {
-    background-color: #23232e;
+    background: linear-gradient(0deg, rgba(16,15,75,1) 15%, rgba(40,40,140,1) 48%, rgba(2,0,36,1) 100%, rgba(0,212,255,1) 100%);
     margin: 0;
     padding: 0;
 }
@@ -44,7 +44,7 @@ nav {
     align-items: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
-    background: #23232e;
+    background: rgb(16,15,75);
     height: 12vh;
 }
 
@@ -53,10 +53,11 @@ nav {
     height: auto;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 }
 
 .card {
+    margin: 80px;
     border: 2px solid yellow; 
     width: 80%;
     height: 88vh;
@@ -88,11 +89,14 @@ nav {
 .tituloClasse {
     color: #ffff;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .personagem img {
     width: 50%;
     height: auto;
+    border: 2px solid yellow;
+    border-radius: 3px;
 }
 
 .grafico {
@@ -113,6 +117,8 @@ nav {
 .texto {
     width: 35%;
     height: 100%;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* border: 2px solid #d612c9; */
 }
 
