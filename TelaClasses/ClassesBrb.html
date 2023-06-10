@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/login.html" class="link-navbar"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/cadastro.html" class="link-navbar"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Bárbaro</b>
+                    </div> 
+                        <img src="./img-classes/barbaro.PNG" alt="brb">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/brb.gif" alt="gif brb">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Bárbaros são os poderosos guerreiros dos clãs da montanha, apelidado assim por sua força sobre-humana, fúria bestial e 
+                            crueldade na batalha que os tornam inimigos verdadeiramente temíveis. Guerreiros das montanhas são habilidosos com todos 
+                            os tipos de armas, mas preferem as mais pesadas e mortais que podem ser usados para matar um inimigo com um único golpe. 
+                            Os mais poderosos dos Bárbaros se consideram feras tão selvagens que se tornam Bersekers - fumegantes de fúria durante a 
+                            batalha, assim, não sentem medo nem dor e seu poder aumenta. Os Bárbaros nunca se sentem errados em invadir as ilhas dos 
+                            Primogênitos e Escolhidos para saquear.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/brb-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/brb-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/brb-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/brb-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/brb-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Golpe Forte</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa ao adversário dano físico equivalente a 20 unidades e 115% do poder físico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Rugido</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica por 6 segundos a penalidade Zumbido Ensurdecedor a todos os adversários dentro de um raio de 2 metros do personagem. O efeito reduz em 15% a força física dos alvos e em 10% o poder mágico.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Provocar</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica a penalidade "Agressão" ao adversário por 5s. O efeito faz com que os monstros ataquem o personagem, e os jogadores só perdem o alvo do ataque.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Talho</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Sangramento" ao inimigo durante 12 s. O efeito causa dano físico equivalente a 20% da força física do personagem a cada 3 s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Investida</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> O personagem se move instantaneamente para o inimigo a uma distância de dois ou mais metros, causa dano físico equivalente a 65% da força física do personagem e aplica "Atordoamento" por 2s. O efeito impede os movimentos, ataques e o uso de habilidades.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Clã das Montanhas',
+    Armadura: 'Armadura: pesada, leve',
+    Armas: 'Armas: machados de uma mão/duas mãos, espadas de uma mão/duas mãos, maças de uma mão/duas mãos, lança, escudo',
+    Função: 'Função: tank'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Brb = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb1.innerHTML = `${habilidade1Brb.Tipo}<br><br>
+${habilidade1Brb.Alcance}<br><br>
+${habilidade1Brb.Energia}<br><br>
+${habilidade1Brb.Recarga}<br><br>`
+
+
+
+var habilidade2Brb = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 16 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb2.innerHTML = `${habilidade2Brb.Tipo}<br><br>
+${habilidade2Brb.Alcance}<br><br>
+${habilidade2Brb.Energia}<br><br>
+${habilidade2Brb.Recarga}<br><br>`
+
+
+
+var habilidade3Brb = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 7 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb3.innerHTML = `${habilidade3Brb.Tipo}<br><br>
+${habilidade3Brb.Alcance}<br><br>
+${habilidade3Brb.Energia}<br><br>
+${habilidade3Brb.Recarga}<br><br>`
+
+
+
+var habilidade4Brb = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb4.innerHTML = `${habilidade4Brb.Tipo}<br><br>
+${habilidade4Brb.Alcance}<br><br>
+${habilidade4Brb.Energia}<br><br>
+${habilidade4Brb.Recarga}<br><br>`
+
+
+
+var habilidade5Brb = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 20 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 18s</span>'
+}
+hb5.innerHTML = `${habilidade5Brb.Tipo}<br><br>
+${habilidade5Brb.Alcance}<br><br>
+${habilidade5Brb.Energia}<br><br>
+${habilidade5Brb.Recarga}<br><br>`
+</script>

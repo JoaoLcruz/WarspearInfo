@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/login.html" class="link-navbar"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/cadastro.html" class="link-navbar"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Invocador</b>
+                    </div> 
+                        <img src="./img-classes/invoc.PNG" alt="Invocador">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/invocador.gif" alt="gif Invocador">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b> <!-- alter historia -->
+                            Magos são grandes exploradores do universo. Depois de compreender a essência dos elementos, Magos aprenderam a controlá-los 
+                            através do uso de magias difíceis e artefatos sofisticados. Magos executam a maior parte de seus experimentos na Academia 
+                            localizada fora do tempo e espaço – como as conseqüências de suas eternas buscas pela verdade poderiam ser muito devastadoras 
+                            e apenas uma vez um Mago aprendeu a possuir as forças na íntegra, ele está permitido a ir para o mundo exterior, a fim de 
+                            proteger o delicado equilíbrio sendo estabelecido em Arinar. No entanto, a arte dos Magos não serve para única criação 
+                            simplesmente - nas batalhas isto ajuda os Escolhidos a inclinar a balança a seu favor outra vez.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/invocador-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/invocador-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/invocador-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/invocador-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/invocador-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Toque Lunar</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque mágico que causa dano aumentado ao inimigo e aplica a penalidade "Toque lunar" por 4 segundos. O efeito aumenta em 5% o dano causado ao alvo pelo Monstro Lunar.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Despertar da Fera</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Evoca o Monstro Lunar para ajudar o personagem pela duração da habilidade. A vida-base do monstro é igual a 90% da vida-base do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Ordem de Ataque</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Força o Monstro Lunar a atacar o alvo selecionado por 10 segundos e aplica o auxílio "Fera Perigosa" por 10 segundos. O efeito aumenta em 10% a velocidade de movimento e em 5% a força física.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Cura</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Restaura instantaneamente 5% da vida máxima do Monstro Lunar e aplica o auxílio "Cura" por 12 segundos. O efeito restaura a vida igual a 15% do poder mágico do personagem a cada 3 segundos.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Cadeia de Raios</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Ataque que causa a um adversário dano físico ou mágico predominante equivalente a 55% da força física ou a 100% da força mágica do personagem e que causa a penalidade "Atordoamento" por 2s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Primogênitos',
+    Armadura: 'Armadura: leve, tecido',
+    Armas: 'Armas: cajado, lança, machados de duas mãos, espada de duas mãos, maça de duas mãos',
+    Função: 'Função: suporte / causar dano (dmg)'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Invocador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 11s</span>'
+}
+hb1.innerHTML = `${habilidade1Invocador.Tipo}<br><br>
+${habilidade1Invocador.Alcance}<br><br>
+${habilidade1Invocador.Energia}<br><br>
+${habilidade1Invocador.Recarga}<br><br>`
+
+
+
+var habilidade2Invocador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 18 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 30s</span>'
+}
+hb2.innerHTML = `${habilidade2Invocador.Tipo}<br><br>
+${habilidade2Invocador.Alcance}<br><br>
+${habilidade2Invocador.Energia}<br><br>
+${habilidade2Invocador.Recarga}<br><br>`
+
+
+
+var habilidade3Invocador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 10 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb3.innerHTML = `${habilidade3Invocador.Tipo}<br><br>
+${habilidade3Invocador.Alcance}<br><br>
+${habilidade3Invocador.Energia}<br><br>
+${habilidade3Invocador.Recarga}<br><br>`
+
+
+
+var habilidade4Invocador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 14s</span>'
+}
+hb4.innerHTML = `${habilidade4Invocador.Tipo}<br><br>
+${habilidade4Invocador.Alcance}<br><br>
+${habilidade4Invocador.Energia}<br><br>
+${habilidade4Invocador.Recarga}<br><br>`
+
+
+
+var habilidade5Invocador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 3 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 19s</span>'
+}
+hb5.innerHTML = `${habilidade5Invocador.Tipo}<br><br>
+${habilidade5Invocador.Alcance}<br><br>
+${habilidade5Invocador.Energia}<br><br>
+${habilidade5Invocador.Recarga}<br><br>`
+</script>

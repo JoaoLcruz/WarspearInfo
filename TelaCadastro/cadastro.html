@@ -34,91 +34,84 @@
             <h2> Criar uma nova Conta</h2>
         </div>
 
-        <form action="#" id="form" class="form">
+        <form class="form">
             <div class="estrutura ">
                 <label for="username"><b>Usuário</b></label>
                 <input id="input_username">
-                <small>Mesagem de erro</small>
             </div>
             <div class="estrutura ">
                 <label for="email"><b>Email</b></label>
                 <input type="email" id="input_email">
-                <small>Mesagem de erro</small>
             </div>
             <div class="estrutura ">
                 <label for="password"><b>Senha</b></label>
                 <input type="password" id="input_senha">
-                <small>Mesagem de erro</small>
             </div>
             <div class="estrutura ">
                 <label for="confirme-password"><b>Confirmar Senha</b></label>
                 <input type="password" id="input_confirme_senha">
-                <small>Mesagem de erro</small>
+            </div>
+            <div class="select_estrutura" >
+                <label for="faccao" ><b>Escolha sua Facção</b></label>
+                <select id="select_faccao">
+                    <option value="">Selecione uma facção</option>
+                    <option value="faccao1">Proscritos</option>
+                    <option value="faccao2">Sentinelas</option>
+                </select>
+            </div>
+            <div class="select_estrutura">
+                <label for="classe"><b>Escolha sua Classe</b></label>
+                <select id="select_classe">
+                    <option value="">Selecione uma classe</option>
+                    <option value="NecroValue">Necromante</option>
+                    <option value="LockValue">Bruxo</option>
+                    <option value="DkValue">Cavaleiro</option>
+                    <option value="CharmerValue">Encantador</option>
+                    <option value="CeifadorValue">Ceifador</option>
+                    <option value="RogueValue">Ladino</option>
+                    <option value="XamaValue">Xamã</option>
+                    <option value="BrbValue">Bárbaro</option>
+                    <option value="HunterValue">Caçador</option>
+                    <option value="CaciqueValue">Cacique</option>
+                    <option value="BdValue">Dançarino</option>
+                    <option value="RangerValue">Patruleiro</option>
+                    <option value="DruidaValue">Druida</option>
+                    <option value="WdValue">Guarda</option>
+                    <option value="InvocadorValue">Invocador</option>
+                    <option value="PalaValue">Paladino</option>
+                    <option value="PriestValue">Sacerdote</option>
+                    <option value="MageValue">Mago</option>
+                    <option value="SeekerValue">Explorador</option>
+                    <option value="TemplarioValue">Templario</option>
+                </select>
             </div>
             <div class="btn">
-                <b>Já tem um conta?<a href="../TelaLog/index.html">Login</a></b>
+                <b>Já tem um conta?<a href="../TelaLog/login.html">Login</a></b>
                 <button type="submit" onclick="validar()">Confirmar</button>
                 
             </div>
-            
+            <span id="span_msg"></span>
         </form>
     </div>
 </div>
 </body>
 </html>
 <script>
-    const form = document.getElementById('form')
-    const username = document.getElementById('input_username')
-    const email = document.getElementById('input_email')
-    const senha = document.getElementById('input_senha')
-    const confirmeSenha = document.getElementById('input_confirme_senha')
+   function validar() {
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        validar();
-    })
+        var usuario = input_username.value
+        var email = input_email.value
+        var senha = input_senha.value
+        var confirmeSenha = input_confirme_senha.value
+        var faccao = select_faccao.value
+        var classe = select_classe.value
+        
 
-    function validar() {
-        const usernameValue = username.value
-        const emailValue = email.value
-        const senhaValue = senha.value
-        const confirmeSenhaValue = confirmeSenha.value
-
-        if (usernameValue == '') {
-            msgErro(username, 'Nome de usuário obrigatório')
-        }else {
-            msfsucesso(username, '');
+        if (usuario == "" || email == "" || senha == "" || confirmeSenha == "" || faccao == "" || classe == "") {
+            // alert("erro")
+            // span_msg.innerHTML = "erro"
+        }else if (senha != confirmeSenha) {
+            // span_msg.innerHTML = "erro2"
         }
-        if (emailValue == '') {
-            msgErro(email, 'Email obrigatório')
-        }else {
-            msfsucesso(email, '');
-        }
-        if (senhaValue == '') {
-            msgErro(senha, 'Senha obrigatório')
-        }else {
-            msfsucesso(senha, '');
-        }
-        if (confirmeSenhaValue == '') {
-            msgErro(confirmeSenha, 'Confirmação de senha obrigatório')
-        }else if (confirmeSenhaValue != senhaValue) {
-            msgErro(confirmeSenha, 'Senha inválida')
-        }else {
-            msfsucesso(confirmeSenha, '');
-        }
-    }
-
-    function msgErro(input, mensagem) {
-        const estrutura = input.parentElement;
-        const small = estrutura.querySelector('small')
-
-        small.innerText = mensagem;
-
-        estrutura.className = 'estrutura erro'
-    }
-    function msfsucesso(input, mensagem) {
-        const estrutura = input.parentElement;
-
-        estrutura.className = 'estrutura sucesso'
-    }
+   } 
 </script>

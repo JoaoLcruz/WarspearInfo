@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/login.html" class="link-navbar"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/cadastro.html" class="link-navbar"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Druida</b>
+                    </div> 
+                        <img src="./img-classes/druid.PNG" alt="druida">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/druida.gif" alt="gif druida">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b> 
+                            Durante o período de suas longas vidas, os druidas aprendem as profundezas da magia natural. Sendo mentalmente íntimos com a floresta, eles podem 
+                            entender a linguagem dos pássaros, animais e plantas. Os druidas usam suas habilidades para o bem do equilíbrio mundial. Eles fazem o seu melhor 
+                            para curar a terra que foi marcada durante a Guerra da Lança. Embora os druidas façam inimigos formidáveis no campo de batalha. Seu sussurro faz 
+                            as raízes das árvores enredarem os pés dos inimigos, e também enviam feras para atacar e rasgar montanheses azarados e mortos-vivos. Os quatro 
+                            druidas mais sábios são membros do Conselho dos Doze, executando as decisões mais importantes que afetam às vezes o destino não apenas de Melwendil, 
+                            mas a própria Arinar por inteiro.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/druida-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/druida-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/druida-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/druida-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/druida-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Raio</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Ataque que causa dano mágico equivalente a 30 e 110% do poder mágico do personagem ao adversário.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Orvalho Restaurador</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o bônus "Orvalho Curativo" a um personagem ou aliado por 15 segundos. O efeito restaura saúde na quantidade de 6 unidades e 30% do poder mágico do personagem a cada 3 segundos.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Pele de Árvore</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Casca Grossa" a um personagem ou aliado por 20s. O efeito aumenta em 15% as proteções física e mágica.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Enxame de Insetos</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa as penalidades "Enxame de Insetos" e "Veneno de Inseto" ao inimigo por 8 s. O efeito "Enxame de Insetos" causa dano mágico de 30% do poder mágico do personagem a cada 2 s. O efeito "Enxame de Insetos" reduz em 20% o parâmetro de velocidade de ataque.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Raízes Enredantes</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Raízes Emaranhadas" ao adversário por 2.5s. O efeito acorrenta o adversário no local. Quando a habilidade sobre o quarto nível ou superior, o inimigo também fica impedido de usar habilidades.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Primogênitos',
+    Armadura: 'Armadura: tecido',
+    Armas: 'Armas: cajado',
+    Função: 'Função: suporte / retardar inimigos'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Druida = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 9s</span>'
+}
+hb1.innerHTML = `${habilidade1Druida.Tipo}<br><br>
+${habilidade1Druida.Alcance}<br><br>
+${habilidade1Druida.Energia}<br><br>
+${habilidade1Druida.Recarga}<br><br>`
+
+
+
+var habilidade2Druida = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 18 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb2.innerHTML = `${habilidade2Druida.Tipo}<br><br>
+${habilidade2Druida.Alcance}<br><br>
+${habilidade2Druida.Energia}<br><br>
+${habilidade2Druida.Recarga}<br><br>`
+
+
+
+var habilidade3Druida = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 20 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 20s</span>'
+}
+hb3.innerHTML = `${habilidade3Druida.Tipo}<br><br>
+${habilidade3Druida.Alcance}<br><br>
+${habilidade3Druida.Energia}<br><br>
+${habilidade3Druida.Recarga}<br><br>`
+
+
+
+var habilidade4Druida = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb4.innerHTML = `${habilidade4Druida.Tipo}<br><br>
+${habilidade4Druida.Alcance}<br><br>
+${habilidade4Druida.Energia}<br><br>
+${habilidade4Druida.Recarga}<br><br>`
+
+
+
+var habilidade5Druida = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 19 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 16s</span>'
+}
+hb5.innerHTML = `${habilidade5Druida.Tipo}<br><br>
+${habilidade5Druida.Alcance}<br><br>
+${habilidade5Druida.Energia}<br><br>
+${habilidade5Druida.Recarga}<br><br>`
+</script>

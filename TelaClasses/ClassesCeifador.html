@@ -49,11 +49,7 @@
                 </div>
             </div>
             <div class="baixo">
-                <div class="parteBaixo">
-                    <div class="texto">
                         <div class="status" id="personagem2Status"></div>
-                    </div>
-                </div>
                 <div class="parteBaixo2">
                     <div class="texto2" id="texto">
                         <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
@@ -118,17 +114,17 @@
 <script>
     // jsons para o lock
 
-var personagem3 = {
+var personagem = {
     Facção: 'Facção: Proscritos',
     Armadura: 'Armadura: pesada e leve',
     Armas: 'Armas: espadas de uma mão, machados de uma mão, adaga',
     Função: 'Função: causar dano, combate corpo a corpo, dano físico, fraqueza dos inimigos'
     
 }
-personagem2Status.innerHTML = `${personagem3.Facção}<br><br>
-${personagem3.Armadura}<br><br>
-${personagem3.Armas}<br><br>
-${personagem3.Função}`
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
 
 
 

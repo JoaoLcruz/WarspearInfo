@@ -49,11 +49,7 @@
                 </div>
             </div>
             <div class="baixo">
-                <div class="parteBaixo">
-                    <div class="texto">
-                        <div class="status" id="personagemStatus"></div>
-                    </div>
-                </div>
+                    <div class="status" id="personagemStatus"></div>
                 <div class="parteBaixo2">
                     <div class="texto2" id="texto">
                         <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
@@ -81,31 +77,31 @@
                     </div>
                     <div class="habilidade" id="habilidade1">
                         <div class="tituloHb"><b>Espinhos da Morte</b></div>
-                        <div class="statusHb" id="DKhb1"></div>
+                        <div class="statusHb" id="hb1"></div>
                         <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa ao adversário dano físico equivalente a 60 unidades e 125% do poder físico do personagem.
                         </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
                     </div>
                     <div class="habilidade" id="habilidade2">
                         <div class="tituloHb"><b>Emanar Escuridão</b></div>
-                        <div class="statusHb" id="DKhb2"></div>
+                        <div class="statusHb" id="hb2"></div>
                         <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Exalando Obscuridade" a um personagem por 10s. durante o próximo ataque bem-sucedido, o efeito causará dano mágico e deixará o alvo incapacitado.
                         </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
                     </div>
                     <div class="habilidade" id="habilidade3">
                         <div class="tituloHb"><b>Provocação</b></div>
-                        <div class="statusHb" id="DKhb3"></div>
+                        <div class="statusHb" id="hb3"></div>
                         <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica a penalidade "Agressão" ao adversário por 9s. O efeito faz com que os monstros ataquem o personagem, e os jogadores perdem o alvo do ataque.
                         </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
                     </div>
                     <div class="habilidade" id="habilidade4">
                         <div class="tituloHb"><b>Fios da Escuridão</b></div>
-                        <div class="statusHb" id="DKhb4"></div>
+                        <div class="statusHb" id="hb4"></div>
                         <div class="descricao"><b><span style="color: red;">Descrição:</span> Move instantaneamente o adversário escolhido em direção ao personagem e aplica as penalidades "Imobilização" por 2s e "Absorção Sombria" por 4s.O efeito de "Imobilização" acorrenta o adversário no local. O efeito "Absorção Sombria" reduz em 4% todo dano recebido.
                         </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
                     </div>
                     <div class="habilidade" id="habilidade5">
                         <div class="tituloHb"><b>Escudo Sombrio</b></div>
-                        <div class="statusHb" id="DKhb5"></div>
+                        <div class="statusHb" id="hb5"></div>
                         <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Escudo Sombrio" a um personagem por 30s. Um efeito com 75% de chance que reduz o dano recebido pelo personagem de ataques automáticos e habilidades que causam dano instantâneo em 4.5% da defesa física do personagem contra ataques de monstros e em 3.5% da defesa física do personagem cotra ataques de jogador.
                         </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
                     </div>
@@ -140,7 +136,7 @@ var habilidade1Dk = {
     Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
     Recarga: 'Recarga: <span style="color: yellowgreen;"> 10 s</span>'
 }
-DKhb1.innerHTML = `${habilidade1Dk.Tipo}<br><br>
+hb1.innerHTML = `${habilidade1Dk.Tipo}<br><br>
 ${habilidade1Dk.Alcance}<br><br>
 ${habilidade1Dk.Energia}<br><br>
 ${habilidade1Dk.Recarga}<br><br>`
@@ -153,7 +149,7 @@ var habilidade2Dk = {
     Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
     Recarga: 'Recarga: <span style="color: yellowgreen;"> 10 s</span>'
 }
-DKhb2.innerHTML = `${habilidade2Dk.Tipo}<br><br>
+hb2.innerHTML = `${habilidade2Dk.Tipo}<br><br>
 ${habilidade2Dk.Alcance}<br><br>
 ${habilidade2Dk.Energia}<br><br>
 ${habilidade2Dk.Recarga}<br><br>`
@@ -166,7 +162,7 @@ var habilidade3Dk = {
     Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
     Recarga: 'Recarga: <span style="color: yellowgreen;"> 8 s</span>'
 }
-DKhb3.innerHTML = `${habilidade3Dk.Tipo}<br><br>
+hb3.innerHTML = `${habilidade3Dk.Tipo}<br><br>
 ${habilidade3Dk.Alcance}<br><br>
 ${habilidade3Dk.Energia}<br><br>
 ${habilidade3Dk.Recarga}<br><br>`
@@ -179,7 +175,7 @@ var habilidade4Dk = {
     Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 15 unidades</span> ',
     Recarga: 'Recarga: <span style="color: yellowgreen;"> 18 s</span>'
 }
-DKhb4.innerHTML = `${habilidade4Dk.Tipo}<br><br>
+hb4.innerHTML = `${habilidade4Dk.Tipo}<br><br>
 ${habilidade4Dk.Alcance}<br><br>
 ${habilidade4Dk.Energia}<br><br>
 ${habilidade4Dk.Recarga}<br><br>`
@@ -191,7 +187,7 @@ var habilidade5Dk = {
     Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 20 unidades</span> ',
     Recarga: 'Recarga: <span style="color: yellowgreen;"> 25 s</span>'
 }
-DKhb5.innerHTML = `${habilidade5Dk.Tipo}<br><br>
+hb5.innerHTML = `${habilidade5Dk.Tipo}<br><br>
 ${habilidade5Dk.Energia}<br><br>
 ${habilidade5Dk.Recarga}<br><br>`
 

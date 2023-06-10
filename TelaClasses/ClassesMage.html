@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/login.html" class="link-navbar"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/cadastro.html" class="link-navbar"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>MAgo</b>
+                    </div> 
+                        <img src="./img-classes/mago.PNG" alt="mage">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/mage.gif" alt="gif mage">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Magos são grandes exploradores do universo. Depois de compreender a essência dos elementos, Magos aprenderam a controlá-los 
+                            através do uso de magias difíceis e artefatos sofisticados. Magos executam a maior parte de seus experimentos na Academia 
+                            localizada fora do tempo e espaço – como as conseqüências de suas eternas buscas pela verdade poderiam ser muito devastadoras 
+                            e apenas uma vez um Mago aprendeu a possuir as forças na íntegra, ele está permitido a ir para o mundo exterior, a fim de 
+                            proteger o delicado equilíbrio sendo estabelecido em Arinar. No entanto, a arte dos Magos não serve para única criação 
+                            simplesmente - nas batalhas isto ajuda os Escolhidos a inclinar a balança a seu favor outra vez.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/mage-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/mage-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/mage-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/mage-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/mage-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Bola de Fogo</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa dano mágico ao inimigo no valor de 30 unidades e 130% do poder mágico do personagem. Se o alvo estiver sob o efeito "Terra Flamejante", terá 30% de chance de a duração do efeito ser ronavada.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Distorção Temporal</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Move o personagem para a área especificada e causa dano mágico equivalente a 115% do poder mágico do personagem a todos os adversários em um raio de 1 metro.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Estilhaços de Pedra</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Ataque que causa dano mágico equivalente a 110% do poder mágico do personagem a todos os adversários dentro de um raio ao redor do personagem e causa o efeito "Atordoamento" por 1s. 
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Correntes Ilusórias</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Repele em 1 metros todos os adversários ao redor, dentro de um raio de 2 metros. A penalidade "Correntes Ilusórias" é aplicada aos alvos afetados durante 2.5s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Armadura Solar</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o bônus "Armadura Solar" ao personagem por 20 segundos. O efeito aumenta a proteção física e mágica em 20%.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Escolhidos',
+    Armadura: 'Armadura: tecido',
+    Armas: 'Armas: cajado',
+    Função: 'Função: causar dano (dmg)'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Mage = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb1.innerHTML = `${habilidade1Mage.Tipo}<br><br>
+${habilidade1Mage.Alcance}<br><br>
+${habilidade1Mage.Energia}<br><br>
+${habilidade1Mage.Recarga}<br><br>`
+
+
+
+var habilidade2Mage = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 16 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 12s</span>'
+}
+hb2.innerHTML = `${habilidade2Mage.Tipo}<br><br>
+${habilidade2Mage.Alcance}<br><br>
+${habilidade2Mage.Energia}<br><br>
+${habilidade2Mage.Recarga}<br><br>`
+
+
+
+var habilidade3Mage = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 1 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 12s</span>'
+}
+hb3.innerHTML = `${habilidade3Mage.Tipo}<br><br>
+${habilidade3Mage.Alcance}<br><br>
+${habilidade3Mage.Energia}<br><br>
+${habilidade3Mage.Recarga}<br><br>`
+
+
+
+var habilidade4Mage = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 2 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 14s</span>'
+}
+hb4.innerHTML = `${habilidade4Mage.Tipo}<br><br>
+${habilidade4Mage.Alcance}<br><br>
+${habilidade4Mage.Energia}<br><br>
+${habilidade4Mage.Recarga}<br><br>`
+
+
+
+var habilidade5Mage = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 19 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 30s</span>'
+}
+hb5.innerHTML = `${habilidade5Mage.Tipo}<br><br>
+${habilidade5Mage.Alcance}<br><br>
+${habilidade5Mage.Energia}<br><br>
+${habilidade5Mage.Recarga}<br><br>`
+</script>

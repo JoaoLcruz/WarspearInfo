@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/login.html" class="link-navbar"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/cadastro.html" class="link-navbar"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Cacique</b>
+                    </div> 
+                        <img src="./img-classes/chief.PNG" alt="cacique">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/cacique.gif" alt="gif cacique">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Os caciques são encarnações vivas dos espíritos do norte. Eles lideram os clãs, inspirando pelo exemplo para feitos de armas. Caciques, como os xamãs, 
+                            adoram os espíritos das Montanhas, imitando-os na batalha. O poder de um urso e a velocidade de um lobo, a visão de uma águia e a astúcia de um rato 
+                            tornam os Caciques adversários temíveis. Seus corpos endurecidos, apenas cobertos por tecido ou couro leve, não conhecem a dor. Maças são o símbolo do 
+                            poder dos caciques e eles os manejam com maestria, um ou dois de uma vez. Você deve pensar duas vezes antes de desafiar um, porque o poder dos espíritos 
+                            de todos os clãs os protege.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/cacique-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/cacique-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/cacique-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/cacique-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/cacique-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Um Sopro dos Espíritos</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Ataque que causa dano mágico equivalente a 30 e 130% do poder mágico do personagem ao adversário.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Olho de Àguia</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio Olho de Águia a um personagem por 5s. O auxílio causa a todos os inimigos o dano mágico equivalente a 30% do poder mágico do personagem dentro de um raio de um metro a cada 2.5s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Vigor do Urso</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Restaura instantaneamente 5% da vida perdida do personagem e mais uma porcentagem da vida no valor de 100% do poder mágico do personagem
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Entusiasmo do Lobo</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o efeito Entusiasmo do Lobo a um personagem por 4 segundo(s). Este efeito aumenta a velocidade de movimento do personagem em 10%.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Surra</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Prende todos os inimigos na área especificada e reduz a velocidade de ataque em 10%, a força física e mágica dos inimigos em 10% por 3 segundo(s).
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Clã das Montanhas',
+    Armadura: 'Armadura: Tecido, leve',
+    Armas: 'Armas: lança, maças de duas mãos, duas maças de uma mão',
+    Função: 'Função: Feitiços de dano, combate corpo a corpo, dano misto, efeito de área'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Cacique = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb1.innerHTML = `${habilidade1Cacique.Tipo}<br><br>
+${habilidade1Cacique.Alcance}<br><br>
+${habilidade1Cacique.Energia}<br><br>
+${habilidade1Cacique.Recarga}<br><br>`
+
+
+
+var habilidade2Cacique = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 1 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 14s</span>'
+}
+hb2.innerHTML = `${habilidade2Cacique.Tipo}<br><br>
+${habilidade2Cacique.Alcance}<br><br>
+${habilidade2Cacique.Energia}<br><br>
+${habilidade2Cacique.Recarga}<br><br>`
+
+
+
+var habilidade3Cacique = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 13s</span>'
+}
+hb3.innerHTML = `${habilidade3Cacique.Tipo}<br><br>
+${habilidade3Cacique.Alcance}<br><br>
+${habilidade3Cacique.Energia}<br><br>
+${habilidade3Cacique.Recarga}<br><br>`
+
+
+
+var habilidade4Cacique = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 18s</span>'
+}
+hb4.innerHTML = `${habilidade4Cacique.Tipo}<br><br>
+${habilidade4Cacique.Alcance}<br><br>
+${habilidade4Cacique.Energia}<br><br>
+${habilidade4Cacique.Recarga}<br><br>`
+
+
+
+var habilidade5Cacique = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 16 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 18s</span>'
+}
+hb5.innerHTML = `${habilidade5Cacique.Tipo}<br><br>
+${habilidade5Cacique.Alcance}<br><br>
+${habilidade5Cacique.Energia}<br><br>
+${habilidade5Cacique.Recarga}<br><br>`
+</script>

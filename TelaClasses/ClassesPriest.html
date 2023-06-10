@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../TelaInicial/index.html" class="logo">Logo</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a href="../TelaInicial/index.html" class="link-navbar"><b>Facções</b></a>
+                </li>
+                <li>
+                    <a href="../TelaMapas/mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                
+                <li>
+                    <a href="../TelaLog/login.html" class="link-navbar"><b>Login</b></a>
+                </li>
+                <li>
+                    <a href="../TelaCadastro/cadastro.html" class="link-navbar"><b>Cadastrar</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="conteiner">
+        
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Sacerdote</b>
+                    </div> 
+                        <img src="./img-classes/sacer.PNG" alt="priest">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/priest.gif" alt="gif priest">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b> 
+                            Os Padres da Igreja Santa se dedicaram ao serviço de Harad. Eles não passar dias e noites realizando treinamento exaustivo, mas sim melhorar o 
+                            seu espírito, aprendendo os preceitos deixados pelo Deus coberto de fogo. Portanto, orações dos sacerdotes nunca são deixadas sem resposta - e 
+                            para um serviço tão zeloso Harad fornece seus servos com o poder de realizar grandes milagres. Apelando para Harad, os Sacerdotes curam e abençoam 
+                            companheiros no campo de batalha e derrubam a ira do Deus Sol sobre inimigos. Não há força que poderia quebrar a crença dos Sacerdotes - que é a 
+                            sua arma principal e mais perigosa. Apenas a sua crença permite que os Escolhidos sejam aqueles que são.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/priest-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/priest-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/priest-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/priest-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/priest-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Lágrimas de Harad</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa dano mágico ao inimigo no valor de 30 do dano-base e 110% do poder mágico do personagem. Tem 80% de chance de o dano de uma habilidade ser recebido por mais dois alvos; 65% de chance de atingir mais três alvos; 50% de chance de atingir mais quatro alvos; 35% de chance de atingir mais cinco alvos; 20% de chance de atingir mais seis alvos que estão em combate com um personagem ou membros de seu grupo dentro de um raio de 4 metros do alvo.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Palavra de Poder</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Juramento de Flagelo" no inimigo por 6s. O efeito aumenta o consumo de energia ao usar habilidades até 45%. O efeito cessará prematuramente se o adversário usar habilidades 2; caso contrário, quando o efeito expirar, receberá um dano mágico equivalente a 120% do poder mágico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Armistício</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Trégua" ao inimigo por 4s. Sob o efeito, o alvo da habilidade não pode atacar o personagem, e o personagem não pode atacar o alvo. No entanto, outros personagens aliados passam a causar 12% a mais de dano.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Escudo Sagrado</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Cria um forte escudo ao redor do personagem ou de um aliado, que absorverá uma determinada quantidade de dano.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Toque de Cura</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Restaura a vida de um personagem ou aliado o equivalente a 30 unidades e 115% do poder mágico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Escolhidos',
+    Armadura: 'Armadura: tecido',
+    Armas: 'Armas: cajado',
+    Função: 'Função: suporte / healer'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Priest = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 7s</span>'
+}
+hb1.innerHTML = `${habilidade1Priest.Tipo}<br><br>
+${habilidade1Priest.Alcance}<br><br>
+${habilidade1Priest.Energia}<br><br>
+${habilidade1Priest.Recarga}<br><br>`
+
+
+
+var habilidade2Priest = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb2.innerHTML = `${habilidade2Priest.Tipo}<br><br>
+${habilidade2Priest.Alcance}<br><br>
+${habilidade2Priest.Energia}<br><br>
+${habilidade2Priest.Recarga}<br><br>`
+
+
+
+var habilidade3Priest = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 19 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 12s</span>'
+}
+hb3.innerHTML = `${habilidade3Priest.Tipo}<br><br>
+${habilidade3Priest.Alcance}<br><br>
+${habilidade3Priest.Energia}<br><br>
+${habilidade3Priest.Recarga}<br><br>`
+
+
+
+var habilidade4Priest = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 16 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb4.innerHTML = `${habilidade4Priest.Tipo}<br><br>
+${habilidade4Priest.Alcance}<br><br>
+${habilidade4Priest.Energia}<br><br>
+${habilidade4Priest.Recarga}<br><br>`
+
+
+
+var habilidade5Priest = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb5.innerHTML = `${habilidade5Priest.Tipo}<br><br>
+${habilidade5Priest.Alcance}<br><br>
+${habilidade5Priest.Energia}<br><br>
+${habilidade5Priest.Recarga}<br><br>`
+</script>
