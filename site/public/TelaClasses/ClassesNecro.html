@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+        <a href="../index.html" class="logo">Waspear Info</a>
+        <ul class="navbar-lista">
+            <li>
+                <a href="../index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+            </li>
+            <li>
+                <a href="../index.html" class="link-navbar"><b>Facções</b></a>
+            </li>
+            <li>
+                <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+            </li>
+            <li>
+                <a href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Necromante</b>
+                    </div> 
+                        <img src="./img-classes/Necromante.PNG" alt="necro">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/necro.gif" alt="gif necro">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Necromantes são mágicos e feiticeiros, cuja vida das almas deixou seus corpos, queimados pelo sopro negro de Garahan sem deixar 
+                            vestígios. Por muitos séculos Necromantes voltaram sua arte negra em uma arma ideal de vingança sobre todos os seres vivos. 
+                            Tendo aprendido o segredo da morte, Necromantes retornaram de suas fronteiras com grande conhecimento. Agora, eles comandam uma 
+                            força verdadeiramente aterrorizante. Ninguém é igual aos Necromantes em sua capacidade de enviar peste e doenças - esses feiticeiros 
+                            conseguem causar sofrimento, mesmo após a morte, ao serviço do Não nomeado. Os tormentos póstumos de prisioneiros de Moraktar alimentam 
+                            a tempestade escarlate, que protege fielmente a ilha dos Proscritos da invasão dos Guardiões.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/necro-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/necro-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/necro-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/necro-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/necro-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Cuspe Venenoso</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Ataque que causa no inimigo dano mágico equivalente a 30 unidades e a 110% do poder mágico do personagem. Se o adversário estiver sob efeito da habilidade "Olho Mortal", também receberá o efeito "Envenenamento" por 6s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Olho Mortal</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Olho Fatal" ao inimigo por 12s. O efeito reduz 4% a quantidade máxima de vida e em 12% a proteção física e mágica.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Pesadelos</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o debuff "Sonolência" ao inimigo por 4s. O efeito impede de se mover, atacar e usar habilidades. Qualquer dano ao alvo removerá o efeito
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Escudo de Ossos</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Cria um forte escudo ao redor do personagem ou de um aliado, que absorverá uma determinada quantidade de dano.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Selo Ancestral</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Restaura a vida de um personagem ou aliado o equivalente a 30 unidades e 115% do poder mágico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Proscritos',
+    Armadura: 'Armadura: tecido',
+    Armas: 'Armas: cajado',
+    Função: 'Função: suporte / healer'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Necro = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 9s</span>'
+}
+hb1.innerHTML = `${habilidade1Necro.Tipo}<br><br>
+${habilidade1Necro.Alcance}<br><br>
+${habilidade1Necro.Energia}<br><br>
+${habilidade1Necro.Recarga}<br><br>`
+
+
+
+var habilidade2Necro = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 8 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb2.innerHTML = `${habilidade2Necro.Tipo}<br><br>
+${habilidade2Necro.Alcance}<br><br>
+${habilidade2Necro.Energia}<br><br>
+${habilidade2Necro.Recarga}<br><br>`
+
+
+
+var habilidade3Necro = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 20s</span>'
+}
+hb3.innerHTML = `${habilidade3Necro.Tipo}<br><br>
+${habilidade3Necro.Alcance}<br><br>
+${habilidade3Necro.Energia}<br><br>
+${habilidade3Necro.Recarga}<br><br>`
+
+
+
+var habilidade4Necro = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb4.innerHTML = `${habilidade4Necro.Tipo}<br><br>
+${habilidade4Necro.Alcance}<br><br>
+${habilidade4Necro.Energia}<br><br>
+${habilidade4Necro.Recarga}<br><br>`
+
+
+
+var habilidade5Necro = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb5.innerHTML = `${habilidade5Necro.Tipo}<br><br>
+${habilidade5Necro.Alcance}<br><br>
+${habilidade5Necro.Energia}<br><br>
+${habilidade5Necro.Recarga}<br><br>`
+</script>

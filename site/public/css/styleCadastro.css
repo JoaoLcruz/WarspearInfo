@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-image: url(../assets/imgs-cadastro/img-cadastro.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+a {
+    color: #ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar-lista {
+    list-style: none;
+    display: flex;
+}
+.navbar-lista li {
+    letter-spacing: 3px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    background: rgb(16,15,75);
+    height: 12vh;
+}
+
+.container {
+    width: 100%;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 27%;
+    height: 90%;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 6 6 6 6;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+select {
+    border-radius: 5px;
+    border: 2px solid #f0f0f0;
+}
+
+select:hover {
+    border: 2px solid #23232e;
+}
+
+
+option {
+    font-weight: bolder;
+}
+
+.titleCadastro {
+    background-color: #23232e;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    background: url(../TelaInicial/imgs-tela/background-image.png);
+    border-image-source: url(../TelaInicial/imgs-tela/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 6 6 10 6;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+.titleCadastro h2 {
+    color: #ffff;
+}
+
+.form {
+    margin: 0px 8px 0 10px;
+    padding: 10px;
+}
+
+
+.estrutura label {
+    margin-bottom: 5px;
+    color: #ffff;
+}
+
+.estrutura input {
+	background: #4e4a4e;
+    color: #ffff;
+    outline: none;
+    font-size: 14px;
+    width: 93%;
+    padding: 10px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.estrutura {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.select_estrutura {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 5px 0;
+}
+
+.select_estrutura label{
+    margin: 5px 0 5px 0;
+    color: #ffff;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffff;
+}
+
+.btn a {
+    color: blue;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23232e;
+    color: #ffff;
+    padding: 10px;
+    cursor: pointer;
+    background: url(../TelaClasses/img-classes/button.png) no-repeat;
+    background-size: 100%;
+    min-width: 160px;
+    min-height: 60px;
+    font-size: 1.1rem;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #e6005a 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+}

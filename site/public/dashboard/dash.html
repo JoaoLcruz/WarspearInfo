@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styleDash.css">
+    <title>Document</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="../index.html" class="logo">Waspear Info</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="../index.html" class="link-navbar"><b>Inicio</b></a>
+                </li>
+                <li>
+                    <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                <li>
+                    <a href="../Classes.html"><b>Classes</b></a>
+                </li>
+                <li>
+                    <div class="usuario" id="usuario"></div>
+                </li>
+                <li>
+                  <a style="cursor:pointer;" onclick="limparSessao()">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="parteCima">
+                <div class="imagem">
+                    <img src="../assets/badge_aliances.png" alt="img facção">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="parteBaixo">
+                <div class="imagem">
+                    <img src="../assets/icon_forsaken.png" alt="img raça">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+  usuario.innerHTML = sessionStorage.NOME_USUARIO
+
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue'],
+        datasets: [{
+          label: 'Facções',
+          data: [12, 19, ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+    const ctx2 = document.getElementById('myChart2');
+  
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green'],
+        datasets: [{
+          label: 'Raças',
+          data: [12, 19, 3, 5],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
