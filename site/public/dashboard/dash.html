@@ -43,7 +43,7 @@
           <img src="../assets/badge_aliances.png" alt="img facção">
         </div>
         <div class="grafico">
-          <canvas id="myChart"></canvas>
+          <canvas id="my1"></canvas>
         </div>
       </div>
       <div class="parteBaixo">
@@ -51,7 +51,7 @@
           <img src="../assets/icon_forsaken.png" alt="img raça">
         </div>
         <div class="grafico">
-          <canvas id="myChart2"></canvas>
+          <canvas id="my2"></canvas>
         </div>
       </div>
     </div>
@@ -61,11 +61,9 @@
 </html>
 <script>
 
-  var listaNomes = []
-  var Votos = []
+ 
 
-  var Votos2 = []
-  var ListaRaca = []
+ 
 
   function obterDadosGrafico() {
 
@@ -89,14 +87,14 @@
 
   }
 
-  function plotarGrafico(resposta) {
+  function plotarGrafico() {
 
     console.log('iniciando plotagem do gráfico...');
 
     // Criando estrutura para plotar gráfico - labels
     let labels = []
     let dados = {
-      labels: listaNomes,
+      labels: listaFaccao,
       datasets: [{
         label: 'Facção',
         data: Votos,
@@ -104,16 +102,18 @@
       }]
     }
 
-
+    var listaFaccao = []
+    var Votos = []
 
     // Inserindo valores recebidos em estrutura para plotar o gráfico
-    for (i = 0; i < resposta.length; i++) {
-      var registro = resposta[i];
-      listaNomes.push(registro.Faccao)
+    for (i = 0; i < listaFaccao.length; i++ ) {
+      console.log("assdjkahskjdhaskjdhak");
+      var registro = listaFaccao[i];
+      listaFaccao.push(registro.Faccao)
       Votos.push(registro.qtdVotos)
-      // labels.push(NomeFaccao.length);
-      // dados.datasets[0].data.push(registro.qtdVotos);
-      // dados.datasets[1].data.push(registro.qtdVotos);
+      // labels.push(listaNomes.length);
+      // dados.datasets[0].data.push(Votos);
+      // dados.datasets[1].data.push(Votos);
     }
 
 
@@ -126,7 +126,7 @@
 
     // Adicionando gráfico criado em div na tela
     const myChart = new Chart(
-      document.getElementById(`myChart`),
+      document.getElementById(`my1`),
       config
     );
   }
@@ -137,69 +137,70 @@
 
   function obterDadosGrafico2() {
 
-console.log("aaaaaaaaaaaaaaaa");
+    console.log("aaaaaaaaaaaaaaaa");
 
-fetch(`/grafico/graficos2`, { cache: 'no-store' }).then(function (response) {
-  if (response.ok) {
-    response.json().then(function (resposta) {
-      console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+    fetch(`/grafico/graficos2`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-      plotarGrafico2(resposta);
+          plotarGrafico2(resposta);
 
-    });
-  } else {
-    console.error('Nenhum dado encontrado ou erro na API');
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
   }
-})
-  .catch(function (error) {
-    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-  });
 
-}
+  function plotarGrafico2(resposta) {
 
-function plotarGrafico2(resposta) {
+    console.log('iniciando plotagem do gráfico...');
 
-console.log('iniciando plotagem do gráfico...');
+    // Criando estrutura para plotar gráfico - labels
+    let labels = []
+    let dados2 = {
+      labels: ListaRaca,
+      datasets: [{
+        label: 'Raça',
+        data: Votos2,
+        borderWidth: 1
+      }]
+    }
 
-// Criando estrutura para plotar gráfico - labels
-let labels = []
-let dados = {
-  labels: ListaRaca,
-  datasets: [{
-    label: 'Raça',
-    data: Votos2,
-    borderWidth: 1
-  }]
-}
+    var Votos2 = []
+    var ListaRaca = []
 
-
-
-// Inserindo valores recebidos em estrutura para plotar o gráfico
-for (i = 0; i < resposta.length; i++) {
-  var registro = resposta[i];
-  ListaRaca.push(registro.Raca)
-  Votos2.push(registro.qtdVotos)
-  // labels.push(NomeFaccao.length);
-  // dados.datasets[0].data.push(registro.qtdVotos);
-  // dados.datasets[1].data.push(registro.qtdVotos);
-}
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < ListaRaca.length; i++) {
+      var registro = ListaRaca[i];
+      ListaRaca.push(registro.Raca)
+      Votos2.push(registro.qtdVotos2)
+      // labels.push(NomeFaccao.length);
+      // dados.datasets[0].data.push(registro.qtdVotos);
+      // dados.datasets[1].data.push(registro.qtdVotos);
+    }
 
 
 
-// Criando estrutura para plotar gráfico - config
-const config = {
-  type: 'bar',
-  data: dados,
-};
+    // Criando estrutura para plotar gráfico - config
+    const config2 = {
+      type: 'bar',
+      data: dados2,
+    };
 
-// Adicionando gráfico criado em div na tela
-const myChart = new Chart(
-  document.getElementById(`myChart`),
-  config
-);
-}
+    // Adicionando gráfico criado em div na tela
+    const myChart2 = new Chart(
+      document.getElementById(`my2`),
+      config2
+    );
+  }
 
-  
+
   obterDadosGrafico()
   plotarGrafico()
   obterDadosGrafico2()

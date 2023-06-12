@@ -11,4 +11,7 @@ router.get("/graficos2", function (req, res) {
     graficoController.buscarResultadosRaca(req, res)
 })
 
+router.post("/quiz", function (req, res) {
+    graficoController.PostarPonto(req, res)
+})
 module.exports = router;

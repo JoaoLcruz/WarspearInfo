@@ -95,8 +95,8 @@
             //   console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
-                alert('Login realizado com sucesso')
-
+               // alert('Login realizado com sucesso')
+                console.log(resposta);
                 resposta.json().then(json => {
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;

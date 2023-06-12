@@ -15,10 +15,13 @@
             <a href="./index.html" class="logo">Waspear Info</a>
             <ul class="navbar-lista">
                 <li>
-                    <a href="#sobre_o_jogo" class="link-navbar"><b>Sobre o jogo</b></a>
+                    <a href="#sobre_o_jogo" class="liCk-navbar"><b>Sobre o jogo</b></a>
                 </li>
                 <li>
-                    <a href="./quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    <a id="dash" href="./dashboard/dash.html">Ranks</a>
+                </li>
+                <li>
+                    <a id="idQuiz" href="./quiz.html" class="link-navbar"><b>Quiz</b></a>
                 </li>
                 <li>
                     <a href="./mapas.html" class="link-navbar"><b>Mapas</b></a>
@@ -26,7 +29,7 @@
                 <li>
                     <a href="./TelaClasses/Classes.html"><b>Classes</b></a>
                 </li>
-                <li>
+                <li id="mudartudo">
                     <a href="./login.html"><img src="./assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
                 </li>
             </ul>
@@ -163,6 +166,23 @@
                 </div>
             </div>
         </div>
-   </footer>
+   </footer> 
 </body>
 </html>
+<script>
+    
+
+    if (sessionStorage.ID_USUARIO == undefined || sessionStorage.ID_USUARIO == null || sessionStorage.ID_USUARIO == "" ) {
+        idQuiz.href = './login.html'
+        dash.href = './login.html'
+    }
+    function sair() {
+        sessionStorage.clear()
+        window.location = './index.html'
+    }
+    
+    if (sessionStorage.ID_USUARIO != undefined) {
+        mudartudo.innerHTML = `<button onclick="sair()">Sair</button>`
+        
+    }
+</script>

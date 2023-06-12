@@ -178,6 +178,22 @@ function fimDoJogo() {
 
     aviso.textContent = "Você conseguiu " + pontos + " " + pont
 
+    console.log(pontos);
+    var idUsuario = sessionStorage.ID_USUARIO
+
+    fetch("/grafico/quiz", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            pontosServer: pontos,
+            idServer: idUsuario
+        })
+    })
+
     a.textContent = ""
     b.textContent = ""
     c.textContent = ""
@@ -189,8 +205,10 @@ function fimDoJogo() {
     // OCULTAR O ARTICLE DA QUESTAO
     articleQuestoes.style.display = 'none'
 
-    setTimeout(function() {
-        pontos = 0 // zerar placar
-        location.reload();
-    }, 2000)
+     setTimeout(function() {
+         pontos = 0  //zerar placar
+         location.reload();
+     }, 2000)
+
+    
 }

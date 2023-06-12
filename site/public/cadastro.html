@@ -169,23 +169,25 @@
 
                 if (resposta.ok) {
 
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Cadastro realizado com sucesso',
-                        text: 'Redirecionando para a tela de login'
-                    });
+                    // Swal.fire({
+                    //     icon: 'success',
+                    //     title: 'Cadastro realizado com sucesso',
+                    //     text: 'Redirecionando para a tela de login'
+                    // });
+                    alert("Redirecionando para a tela de login")
 
                     setTimeout(() => {
-                        window.location = "/login.html";
+                        window.location = "./login.html";
                     }, "2000")
 
                     // limparFormulario();
                     // finalizarAguardar();
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Houve um erro ao realizar o cadastro'
-                    });
+                    alert("Houve um erro ao realizar o cadastro")
+                    // Swal.fire({
+                    //     icon: 'error',
+                    //     title: 'Houve um erro ao realizar o cadastro'
+                    // });
                 }
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${ resposta }`);
