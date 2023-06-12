@@ -1,99 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styleDash.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styleDash.css">
+  <title>Document</title>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <body>
-    <header >
-        <nav class="navbar">
-            <a href="../index.html" class="logo">Waspear Info</a>
-            <ul class="navbar-lista">
-                <li>
-                    <a href="../index.html" class="link-navbar"><b>Inicio</b></a>
-                </li>
-                <li>
-                    <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
-                </li>
-                <li>
-                    <a href="../Classes.html"><b>Classes</b></a>
-                </li>
-                <li>
-                    <div class="usuario" id="usuario"></div>
-                </li>
-                <li>
-                  <a style="cursor:pointer;" onclick="limparSessao()">Sair</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <div class="card">
-            <div class="parteCima">
-                <div class="imagem">
-                    <img src="../assets/badge_aliances.png" alt="img facção">
-                </div>
-                <div class="grafico">
-                    <canvas id="myChart"></canvas>
-                </div>
-            </div>
-            <div class="parteBaixo">
-                <div class="imagem">
-                    <img src="../assets/icon_forsaken.png" alt="img raça">
-                </div>
-                <div class="grafico">
-                    <canvas id="myChart2"></canvas>
-                </div>
-            </div>
+  <header>
+    <nav class="navbar">
+      <a href="../index.html" class="logo">Waspear Info</a>
+      <ul class="navbar-lista">
+        <li>
+          <a href="../index.html" class="link-navbar"><b>Inicio</b></a>
+        </li>
+        <li>
+          <a href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+        </li>
+        <li>
+          <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+        </li>
+        <li>
+          <a href="../Classes.html"><b>Classes</b></a>
+        </li>
+        <li>
+          <div class="usuario" id="usuario"></div>
+        </li>
+        <li>
+          <a style="cursor:pointer;" onclick="limparSessao()">Sair</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="card">
+      <div class="parteCima">
+        <div class="imagem">
+          <img src="../assets/badge_aliances.png" alt="img facção">
         </div>
+        <div class="grafico">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+      <div class="parteBaixo">
+        <div class="imagem">
+          <img src="../assets/icon_forsaken.png" alt="img raça">
+        </div>
+        <div class="grafico">
+          <canvas id="myChart2"></canvas>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
+
 </html>
 <script>
-  usuario.innerHTML = sessionStorage.NOME_USUARIO
 
-    const ctx = document.getElementById('myChart');
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue'],
-        datasets: [{
-          label: 'Facções',
-          data: [12, 19, ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
+  var listaNomes = []
+  var Votos = []
+
+  var Votos2 = []
+  var ListaRaca = []
+
+  function obterDadosGrafico() {
+
+    console.log("wqeqweqweqwe");
+
+    fetch(`/grafico/graficos`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+          plotarGrafico(resposta);
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
       }
-    });
-    const ctx2 = document.getElementById('myChart2');
-  
-    new Chart(ctx2, {
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
+
+  function plotarGrafico(resposta) {
+
+    console.log('iniciando plotagem do gráfico...');
+
+    // Criando estrutura para plotar gráfico - labels
+    let labels = []
+    let dados = {
+      labels: listaNomes,
+      datasets: [{
+        label: 'Facção',
+        data: Votos,
+        borderWidth: 1
+      }]
+    }
+
+
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      listaNomes.push(registro.Faccao)
+      Votos.push(registro.qtdVotos)
+      // labels.push(NomeFaccao.length);
+      // dados.datasets[0].data.push(registro.qtdVotos);
+      // dados.datasets[1].data.push(registro.qtdVotos);
+    }
+
+
+
+    // Criando estrutura para plotar gráfico - config
+    const config = {
       type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green'],
-        datasets: [{
-          label: 'Raças',
-          data: [12, 19, 3, 5],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
+      data: dados,
+    };
+
+    // Adicionando gráfico criado em div na tela
+    const myChart = new Chart(
+      document.getElementById(`myChart`),
+      config
+    );
+  }
+
+
+
+
+
+  function obterDadosGrafico2() {
+
+console.log("aaaaaaaaaaaaaaaa");
+
+fetch(`/grafico/graficos2`, { cache: 'no-store' }).then(function (response) {
+  if (response.ok) {
+    response.json().then(function (resposta) {
+      console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+      plotarGrafico2(resposta);
+
     });
-  </script>
+  } else {
+    console.error('Nenhum dado encontrado ou erro na API');
+  }
+})
+  .catch(function (error) {
+    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+  });
+
+}
+
+function plotarGrafico2(resposta) {
+
+console.log('iniciando plotagem do gráfico...');
+
+// Criando estrutura para plotar gráfico - labels
+let labels = []
+let dados = {
+  labels: ListaRaca,
+  datasets: [{
+    label: 'Raça',
+    data: Votos2,
+    borderWidth: 1
+  }]
+}
+
+
+
+// Inserindo valores recebidos em estrutura para plotar o gráfico
+for (i = 0; i < resposta.length; i++) {
+  var registro = resposta[i];
+  ListaRaca.push(registro.Raca)
+  Votos2.push(registro.qtdVotos)
+  // labels.push(NomeFaccao.length);
+  // dados.datasets[0].data.push(registro.qtdVotos);
+  // dados.datasets[1].data.push(registro.qtdVotos);
+}
+
+
+
+// Criando estrutura para plotar gráfico - config
+const config = {
+  type: 'bar',
+  data: dados,
+};
+
+// Adicionando gráfico criado em div na tela
+const myChart = new Chart(
+  document.getElementById(`myChart`),
+  config
+);
+}
+
+  
+  obterDadosGrafico()
+  plotarGrafico()
+  obterDadosGrafico2()
+  plotarGrafico2()
+</script>

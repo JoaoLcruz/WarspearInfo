@@ -25,11 +25,13 @@ function cadastrar(nome, email, senha, faccao, raca) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (nome, email, senha, faccao, raca) VALUES ('${nome}', '${email}', '${senha}', '${faccao}', '${raca}');
+        INSERT INTO usuario (nome, email, senha, Fkfaccao, Fkraca) VALUES ('${nome}', '${email}', '${senha}', '${faccao}', '${raca}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+
 
 module.exports = {
     entrar,
