@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styleLog.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+        <nav class="navbar">
+            <a href="./index.html" class="logo">Waspear Info</a>
+            <ul class="navbar-lista">
+                <li>
+                    <a href="./index.html" class="link-navbar"><b>Sobre o jogo</b></a>
+                </li>
+                <li>
+                    <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                </li>
+                <li>
+                    <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                </li>
+                <li>
+                    <a href="./mapas.html" class="link-navbar"><b>Mapas</b></a>
+                </li>
+                <li>
+                    <a href="./TelaClasses/Classes.html"><b>Classes</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="titleLog">
+                <h2> Entrar</h2>
+            </div>
+    
+            <div class="form">
+                
+                <div class="estrutura ">
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" id="email_input">
+                </div>
+                <div class="estrutura ">
+                    <label for="password"><b>Senha</b></label>
+                    <input type="password" id="senha_input">
+                </div>
+                <div class="btn">
+                    <b>Não possui uma conta?<br><a style="border: none;" href="./cadastro.html">Cadastre-se</a></b>
+                    <button onclick="ValidarLogin()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function ValidarLogin() {
+        const email = document.getElementById('email_input').value;
+        const senha = document.getElementById('senha_input').value;
+
+        if (email == "" || senha == "") {
+            alert('Preencha todos os campo')
+        }else{
+            entrar(email, senha)
+        }
+    }
+
+
+    function entrar(email, senha) {
+
+    //   if (emailVar == "" || senhaVar == "") {
+    //     //   cardErro.style.display = "block"
+    //     //   mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    //     alert('Preencha todos os campos')
+    //       finalizarAguardar();
+    //       return false;
+    //   }
+    //   else {
+    //       setInterval(sumirMensagem, 5000)
+    //   }
+
+    //   console.log("FORM LOGIN: ", emailVar);
+    //   console.log("FORM SENHA: ", senhaVar);
+
+      fetch("/usuarios/autenticar", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              emailServer: email,
+              senhaServer: senha
+          })
+      })
+        .then(function (resposta) {
+            //   console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+               // alert('Login realizado com sucesso')
+                console.log(resposta);
+                resposta.json().then(json => {
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    
+
+                    setTimeout(function () {
+                    window.location = "./dashboard/dash.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    //   finalizarAguardar(texto);
+                });
+            }
+
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        })
+
+      return false;
+  }
+</script>

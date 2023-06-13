@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+            <nav class="navbar">
+                <a href="./index.html" class="logo">Waspear Info</a>
+                <ul class="navbar-lista">
+                    <li>
+                        <a href="../index.html" class="liCk-navbar"><b>Sobre o jogo</b></a>
+                    </li>
+                    <li>
+                        <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                    </li>
+                    <li>
+                        <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    </li>
+                    <li>
+                        <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                    </li>
+                    <li id="mudartudo">
+                        <a  href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Xamã</b>
+                    </div> 
+                        <img src="./img-classes/xamaã.PNG" alt="xamã">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/xamã.gif" alt="gif xamã">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Xamãs são os montanheses que descobriram o poder interior para controlar os confins da natureza. 
+                            Os longos anos gastos com o desejo de encontrar a união com o mundo dos espíritos ajudaram Xamãs a 
+                            ganhar o respeito e a estima do povo da montanha. Com o auxílio dos Espíritos suaves da natureza, os 
+                            Xamãs aterrorizam facilmente seus inimigos. Além disso, eles são capazes de curar as feridas mais 
+                            horríveis recebidas em batalha. Mantendo na memória os contos de grandes caciques e heróis, os Xamãs 
+                            podem vislumbrar o futuro, moldando suas visões como profecias enevoadas... Todas essas habilidades 
+                            combinadas fazem dos Xamãs temidos adversários em batalhas e professores sábios em tempos de paz.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/xama-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/xama-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/xama-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/xama-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/xama-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Esfera Relampejante</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Ataque que causa dano mágico equivalente a 30 e 110% do poder mágico do personagem ao adversário.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Espírito Restaurador</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Espírito de Cura" a um personagem ou aliado por 15s. O efeito restaura vida equivalente a 6 e 30% do poder mágico do personagem a cada 3s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Proteção Telúrica</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Proteção Telúrica" a um personagem ou membro do grupo por 20s. O efeito aumenta a proteção física e mágica em 15%.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Impacto Relampejante</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Impacto Relampejante" ao inimigo por 1s. O efeito faz o inimigo se mover pelo campo de batalha de forma caótica, e impede o ataque e o uso de habilidades.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Terremoto</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> taque que causa dano mágico equivalente a 115% do poder mágico do personagem na área especificada a todos os adversários e causa o efeito "Terremoto" por 2.8s. O efeito impede o movimento e reduz em 12% o parâmetro de velocidade de ataque.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./funcaoClasses.js"></script>
+<script src="./logout.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Clã das Montanhas',
+    Armadura: 'Armadura: tecido',
+    Armas: 'Armas: cajado',
+    Função: 'Função: suporte / healer'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Xama = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 9s</span>'
+}
+hb1.innerHTML = `${habilidade1Xama.Tipo}<br><br>
+${habilidade1Xama.Alcance}<br><br>
+${habilidade1Xama.Energia}<br><br>
+${habilidade1Xama.Recarga}<br><br>`
+
+
+
+var habilidade2Xama = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 18 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb2.innerHTML = `${habilidade2Xama.Tipo}<br><br>
+${habilidade2Xama.Alcance}<br><br>
+${habilidade2Xama.Energia}<br><br>
+${habilidade2Xama.Recarga}<br><br>`
+
+
+
+var habilidade3Xama = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 20 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 20s</span>'
+}
+hb3.innerHTML = `${habilidade3Xama.Tipo}<br><br>
+${habilidade3Xama.Alcance}<br><br>
+${habilidade3Xama.Energia}<br><br>
+${habilidade3Xama.Recarga}<br><br>`
+
+
+
+var habilidade4Xama = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 19 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb4.innerHTML = `${habilidade4Xama.Tipo}<br><br>
+${habilidade4Xama.Alcance}<br><br>
+${habilidade4Xama.Energia}<br><br>
+${habilidade4Xama.Recarga}<br><br>`
+
+
+
+var habilidade5Xama = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb5.innerHTML = `${habilidade5Xama.Tipo}<br><br>
+${habilidade5Xama.Alcance}<br><br>
+${habilidade5Xama.Energia}<br><br>
+${habilidade5Xama.Recarga}<br><br>`
+</script>

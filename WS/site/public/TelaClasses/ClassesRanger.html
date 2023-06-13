@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+            <nav class="navbar">
+                <a href="./index.html" class="logo">Waspear Info</a>
+                <ul class="navbar-lista">
+                    <li>
+                        <a href="../index.html" class="liCk-navbar"><b>Sobre o jogo</b></a>
+                    </li>
+                    <li>
+                        <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                    </li>
+                    <li>
+                        <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    </li>
+                    <li>
+                        <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                    </li>
+                    <li id="mudartudo">
+                        <a  href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Patruleiro</b>
+                    </div> 
+                        <img src="./img-classes/patruleiro.PNG" alt="ranger">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/ranger.gif" alt="gif ranger">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Nem todos os elfos escolheram as lâminas para a sua arma principal. Os Patrulheiros deram a sua preferência a um arco - como sua forma assemelha-se 
+                            a um crescente também. Patrulheiros Élficos são tão qualificados na arquería que nenhum dos seres humanos pode competir nesta arte com qualquer 
+                            Primogênito. Um Patrulheiro pode atingir um alvo a uma distância tão longa, que às vezes leva quase uma hora para recuperar uma flecha. Sua pontaria 
+                            tornou-se sinônimo também. Os quatro melhores atiradores entre os Patrulheiros estão incluídas no Conselho dos Doze, também servindo ao Conselho 
+                            Élfico como seus olhos e ouvidos.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/ranger-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/ranger-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/ranger-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/ranger-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/ranger-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Tiro Potente</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa ao adversário dano físico equivalente a 20 unidades e 100% do poder físico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Tiro de Dispersão</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Desorientação" ao inimigo por 1.5s. Sob a influência do efeito, o inimigo não pode atacar nem usar habilidades e, em vez disso, move-se caoticamente pelo campo de batalha.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Evasão</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aumenta em 10% o parâmetro Esquiva do personagem por 10 segundo(s).
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Benção do Patrulheiro</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Bênção" ao personagem por 14s. Sob o efeito de um ataque do personagem com chance de 20%, pode causar dano extra equivalente a 25% da força física do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Armadilha para Feras</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Posiciona a armadilha invisível no local especificado por 10s. Quando é acionada, a armadilha acorrenta o inimigo ao local por 3s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./logout.js"></script>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Primogênitos',
+    Armadura: 'Armadura: leve',
+    Armas: 'Armas: arco, balestra',
+    Função: 'Função: causar dano (dmg)'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Ranger = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb1.innerHTML = `${habilidade1Ranger.Tipo}<br><br>
+${habilidade1Ranger.Alcance}<br><br>
+${habilidade1Ranger.Energia}<br><br>
+${habilidade1Ranger.Recarga}<br><br>`
+
+
+
+var habilidade2Ranger = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 3 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 17s</span>'
+}
+hb2.innerHTML = `${habilidade2Ranger.Tipo}<br><br>
+${habilidade2Ranger.Alcance}<br><br>
+${habilidade2Ranger.Energia}<br><br>
+${habilidade2Ranger.Recarga}<br><br>`
+
+
+
+var habilidade3Ranger = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 15 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 30s</span>'
+}
+hb3.innerHTML = `${habilidade3Ranger.Tipo}<br><br>
+${habilidade3Ranger.Alcance}<br><br>
+${habilidade3Ranger.Energia}<br><br>
+${habilidade3Ranger.Recarga}<br><br>`
+
+
+
+var habilidade4Ranger = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 15 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 30s</span>'
+}
+hb4.innerHTML = `${habilidade4Ranger.Tipo}<br><br>
+${habilidade4Ranger.Alcance}<br><br>
+${habilidade4Ranger.Energia}<br><br>
+${habilidade4Ranger.Recarga}<br><br>`
+
+
+
+var habilidade5Ranger = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 15 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb5.innerHTML = `${habilidade5Ranger.Tipo}<br><br>
+${habilidade5Ranger.Alcance}<br><br>
+${habilidade5Ranger.Energia}<br><br>
+${habilidade5Ranger.Recarga}<br><br>`
+</script>

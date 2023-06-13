@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+            <nav class="navbar">
+                <a href="./index.html" class="logo">Waspear Info</a>
+                <ul class="navbar-lista">
+                    <li>
+                        <a href="../index.html" class="liCk-navbar"><b>Sobre o jogo</b></a>
+                    </li>
+                    <li>
+                        <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                    </li>
+                    <li>
+                        <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    </li>
+                    <li>
+                        <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                    </li>
+                    <li id="mudartudo">
+                        <a  href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Bruxo</b>
+                    </div> 
+                        <img src="./img-classes/char.PNG" alt="charmer">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/charmer.gif" alt="gif charmer">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b>
+                            Encantadores são os novos recrutas dos Proscritos. Eles combinam os melhores atributos de feiticeiros de batalha e guerreiros 
+                            com armadura e estão habituados a usar bastões e maças pesadas. Encantadores são submetidos à iniciação durante a cerimônia na 
+                            masmorra mais sombria de Moraktar. Poucos sabem quais são os juramentos e qual é o preço a ser pago pelos Encantadores, a 
+                            última esperança dos Proscritos, para obter seu poder.  
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/charmer-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/charmer-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/charmer-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/charmer-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/charmer-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Prisma sombrio</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa dano mágico ao inimigo no valor de 30 unidades e 110% do poder mágico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Cura de guerreiro</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Restaura instantaneamente a vida de um personagem equivalente a 30% do poder mágico do personagem e aplica o auxílio "Cura de Combate" por 12 segundos. O efeito restaura vida equivalente a 8 unidades e 15% do poder mágico do personagem a cada 3 s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Fraqueza</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Reduz em 15% as defesas mágica e física do inimigo por 8 segundos.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Chamado</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Evoca um monstro por 12 segundos na região designada. O monstro causa dano físico ao inimigo. Com o desenvolvimento da habilidade, os parâmetros e o tempo de vida do monstro aumentam. O poder físico do monstro também depende do poder físico e do nível do personagem. O número máximo de monstro por local é de 3.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Opressão</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Um ataque que causa ao inimigo dano mágico equivalente a 30 unidades e de 50% do poder mágico do personagem, e atordoa-o por 1.5s. O efeito impede movimentos, ataques e o uso de habilidades.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./logout.js"></script>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o lock
+
+var personagem4 = {
+    Facção: 'Facção: Proscritos',
+    Armadura: 'tecido, pesado',
+    Armas: 'Armas: cajado, escudo, maça de uma mão',
+    Função: 'Função: suporte'
+    
+}
+personagem2Status.innerHTML = `${personagem4.Facção}<br><br>
+${personagem4.Armadura}<br><br>
+${personagem4.Armas}<br><br>
+${personagem4.Função}`
+
+
+
+var habilidade1Charmer = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 9s</span>'
+}
+hb1.innerHTML = `${habilidade1Charmer.Tipo}<br><br>
+${habilidade1Charmer.Alcance}<br><br>
+${habilidade1Charmer.Energia}<br><br>
+${habilidade1Charmer.Recarga}<br><br>`
+
+
+
+var habilidade2Charmer = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 12s</span>'
+}
+hb2.innerHTML = `${habilidade2Charmer.Tipo}<br><br>
+${habilidade2Charmer.Alcance}<br><br>
+${habilidade2Charmer.Energia}<br><br>
+${habilidade2Charmer.Recarga}<br><br>`
+
+
+
+var habilidade3Charmer = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 20s</span>'
+}
+hb3.innerHTML = `${habilidade3Charmer.Tipo}<br><br>
+${habilidade3Charmer.Alcance}<br><br>
+${habilidade3Charmer.Energia}<br><br>
+${habilidade3Charmer.Recarga}<br><br>`
+
+
+
+var habilidade4Charmer = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 17 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 22s</span>'
+}
+hb4.innerHTML = `${habilidade4Charmer.Tipo}<br><br>
+${habilidade4Charmer.Alcance}<br><br>
+${habilidade4Charmer.Energia}<br><br>
+${habilidade4Charmer.Recarga}<br><br>`
+
+
+
+var habilidade5Charmer = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 3 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 18 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 18s</span>'
+}
+hb5.innerHTML = `${habilidade5Charmer.Tipo}<br><br>
+${habilidade5Charmer.Alcance}<br><br>
+${habilidade5Charmer.Energia}<br><br>
+${habilidade5Charmer.Recarga}<br><br>`
+</script>

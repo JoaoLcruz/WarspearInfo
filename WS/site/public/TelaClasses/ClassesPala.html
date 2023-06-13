@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+            <nav class="navbar">
+                <a href="./index.html" class="logo">Waspear Info</a>
+                <ul class="navbar-lista">
+                    <li>
+                        <a href="../index.html" class="liCk-navbar"><b>Sobre o jogo</b></a>
+                    </li>
+                    <li>
+                        <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                    </li>
+                    <li>
+                        <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    </li>
+                    <li>
+                        <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                    </li>
+                    <li id="mudartudo">
+                        <a  href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Paladino</b>
+                    </div> 
+                        <img src="./img-classes/paladino.PNG" alt="wd">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/pala.gif" alt="gif wd">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b> 
+                            Paladinos são guerreiros da Ordem da Luz Celestial. Eles não só têm excelente formação e armas de confiança em seu arsenal, mas o Deus Harad 
+                            também os ajuda na batalha. Sua chama inextinguível está queimando em uma lâmpada de óleo que Paladinos recebem das mãos do imperador no dia 
+                            de sua iniciação. Por isso, os mortos-vivos têm terrível medo dos guerreiros santos - mesmo os montanheses têm medo de Paladinos, os quais 
+                            devotamente seguem seu próprio código de honra e protegem o bem e mantêm a justiça em torno de Arinar. Vestidos de armadura pesada, com martelos 
+                            de batalha prontos, Paladinos golpeiam o medo nos corações de seus inimigos no campo de batalha simplesmente com sua aparência. Depois de ler uma 
+                            oração a Harad com uma voz de canto, eles entram em batalha com o nome do Imperador em seus lábios, sem sentir nem piedade, nem dúvida.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/pala-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/pala-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/pala-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/pala-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/pala-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Purificar</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Ataque que causa dano físico equivalente a 20 unidades e 115% do poder físico do personagem. Se o alvo estiver sob efeito da habilidade "Grilhões da Justiça", a cada 2 s também receberá dano mágico equivalente a 10 unidades e 35% do poder mágico do personagem por 6 s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Grilhões da Justiça</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica por 3 segundo(s) a penalidade Algemas da Justiça a todos os adversários dentro de um determinado raio do personagem. O inimigo não pode se mover e dano ao alvo não remove o efeito. Se a habilidade se desenvolver até o quarto nível ou superior, o alvo ficará impedido de usar habilidades.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Persuasão</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica a penalidade "Agressão" ao adversário por 5s. O efeito faz com que os monstros ataquem o personagem, e os jogadores só perdem o alvo do ataque.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Luz Celestial</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Restaura a vida de um personagem ou aliado o equivalente a 30 unidades e 105% do poder mágico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Aura de Luz</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aumenta em 4% o parâmetro de precisão do personagem e em 10% a força das habilidades de cura do personagem e membros do grupo em um raio de 3 metros pela duração da habilidade.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./logout.js"></script>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Escolhidos',
+    Armadura: 'Armadura: pesado, leve',
+    Armas: 'Armas: machados de uma mão/duas mãos, espadas de uma mão/duas mãos, maças de uma mão/duas mãos, lança, escudo',
+    Função: 'Função: tank, suporte, causar dano (dmg)'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Pala = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb1.innerHTML = `${habilidade1Pala.Tipo}<br><br>
+${habilidade1Pala.Alcance}<br><br>
+${habilidade1Pala.Energia}<br><br>
+${habilidade1Pala.Recarga}<br><br>`
+
+
+
+var habilidade2Pala = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 1 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 14 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 18s</span>'
+}
+hb2.innerHTML = `${habilidade2Pala.Tipo}<br><br>
+${habilidade2Pala.Alcance}<br><br>
+${habilidade2Pala.Energia}<br><br>
+${habilidade2Pala.Recarga}<br><br>`
+
+
+
+var habilidade3Pala = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 7 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb3.innerHTML = `${habilidade3Pala.Tipo}<br><br>
+${habilidade3Pala.Alcance}<br><br>
+${habilidade3Pala.Energia}<br><br>
+${habilidade3Pala.Recarga}<br><br>`
+
+
+
+var habilidade4Pala = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 14s</span>'
+}
+hb4.innerHTML = `${habilidade4Pala.Tipo}<br><br>
+${habilidade4Pala.Alcance}<br><br>
+${habilidade4Pala.Energia}<br><br>
+${habilidade4Pala.Recarga}<br><br>`
+
+
+
+var habilidade5Pala = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 1 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb5.innerHTML = `${habilidade5Pala.Tipo}<br><br>
+${habilidade5Pala.Alcance}<br><br>
+${habilidade5Pala.Energia}<br><br>
+${habilidade5Pala.Recarga}<br><br>`
+</script>

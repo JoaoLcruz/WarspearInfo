@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-image: url(../assets/img-log/img-log.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    color: #ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar-lista {
+    list-style: none;
+    display: flex;
+}
+.navbar-lista li {
+    letter-spacing: 3px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    background: rgb(16,15,75);
+    height: 12vh;
+}
+.container {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card {
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 27%;
+    height: auto;
+    overflow: hidden;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 6 6 6 6;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+.titleLog {
+    background-color: #23232e;
+    padding: 20px;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 6 6 10 6;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+    
+}
+
+.titleLog h2 {
+    color: #ffff;
+}
+
+.form {
+    margin: 0px 8px 0 10px;
+    padding: 10px;
+}
+
+
+.estrutura label {
+    margin-bottom: 5px;
+    color: #ffff;
+}
+
+.estrutura input {
+    font-size: 14px;
+    width: 93%;
+    padding: 10px;
+	background: #4e4a4e;
+    outline: none;
+    color: #ffff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+
+.estrutura {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.form button {
+    display: flex;
+    justify-content: center;
+    color: #ffff;
+    padding: 10px;
+    cursor: pointer;
+    background: url(../TelaClasses/img-classes/button.png) no-repeat;
+    background-size: 100%;
+    min-width: 160px;
+    min-height: 60px;
+    font-size: 1.1rem;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.btn a {
+    color: rgb(0, 8, 255);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+
+.btn b {
+    color: #ffff;
+}

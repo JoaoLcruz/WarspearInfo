@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+            <nav class="navbar">
+                <a href="./index.html" class="logo">Waspear Info</a>
+                <ul class="navbar-lista">
+                    <li>
+                        <a href="../index.html" class="liCk-navbar"><b>Sobre o jogo</b></a>
+                    </li>
+                    <li>
+                        <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                    </li>
+                    <li>
+                        <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    </li>
+                    <li>
+                        <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                    </li>
+                    <li id="mudartudo">
+                        <a  href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Ceifador</b>
+                    </div> 
+                        <img src="./img-classes/ceifar.PNG" alt="lock">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/ceifador.gif" alt="gif lock">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b> 
+                            Os Ceifadores são evitados pelos próprios Proscritos, porque esses guerreiros sombrios fizeram um acordo com forças demoníacas, querendo ganhar 
+                            poder desumano no campo de batalha. Vestidos com placas pesadas, os Ceifadores marcham nas primeiras fileiras das Legiões de Aço, ceifando a 
+                            colheita sangrenta com suas lâminas encantadas afiadas. Mas eles se tornam verdadeiramente terríveis quando assumem um disfarce demoníaco: abrindo 
+                            suas asas de encouraçadas e levantando os chifres que coroam suas cabeças, os Ceifadores invadem as fileiras do inimigo - e não há armadura que 
+                            resista a seus rápidos, mas mortais ataques.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/ceifador-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/ceifador-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/ceifador-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/ceifador-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/ceifador-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Evisceração</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Ataque que causa dano 20 unidades de dano físico e 115% da força física do personagem ao inimigo e acumula A de ódio. Na forma demoníaca, a habilidade não acumula ódio.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Aparência Demoníaca</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Transforma o personagem em um demônio durante o efeito da habilidade. A aparência demoníaca está disponível para uso com 12 de ódio acumulado. Enquanto a habilidade estiver em vigor, 1 das unidades de ódio são consumidas por segundo. Assim que o ódio acabar, a habilidade será desativada automaticamente.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Impulso Sobrenatural</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Move o personagem para a área especificada e aplica a penalidade "Grilhões dos Mortos" aos adversários por 4s. O efeito desacelera em 8% os alvos. Na forma demoníaca, a habilidade também aplica a penalidade "Sangramento" nos alvos afetados por 8s. 
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Indulgência do Caos</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Presentes do Caos" a um personagem por 12s. O efeito aumenta em 5% o acerto crítico e em 7% a velocidade de ataque. A duração do efeito é atualizada ao alternar para a forma demoníaca.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Correntes do Submundo</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Acorrenta o inimigo no local e diminui em 15% o parâmetro "Recarga de habilidades" do alvo por 3s. Na forma demoníaca, o efeito da habilidade é adicionalmente aplicado a adversários dentro de em um raio de 2 metros do alvo principal.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./logout.js"></script>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o lock
+
+var personagem = {
+    Facção: 'Facção: Proscritos',
+    Armadura: 'Armadura: pesada e leve',
+    Armas: 'Armas: espadas de uma mão, machados de uma mão, adaga',
+    Função: 'Função: causar dano, combate corpo a corpo, dano físico, fraqueza dos inimigos'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Ceifador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 8s</span>'
+}
+hb1.innerHTML = `${habilidade1Ceifador.Tipo}<br><br>
+${habilidade1Ceifador.Alcance}<br><br>
+${habilidade1Ceifador.Energia}<br><br>
+${habilidade1Ceifador.Recarga}<br><br>`
+
+
+
+var habilidade2Ceifador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 12s</span>'
+}
+hb2.innerHTML = `${habilidade2Ceifador.Tipo}<br><br>
+${habilidade2Ceifador.Alcance}<br><br>
+${habilidade2Ceifador.Energia}<br><br>
+${habilidade2Ceifador.Recarga}<br><br>`
+
+
+
+var habilidade3Ceifador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 20s</span>'
+}
+hb3.innerHTML = `${habilidade3Ceifador.Tipo}<br><br>
+${habilidade3Ceifador.Alcance}<br><br>
+${habilidade3Ceifador.Energia}<br><br>
+${habilidade3Ceifador.Recarga}<br><br>`
+
+
+
+var habilidade4Ceifador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 5 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 11 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 12s</span>'
+}
+hb4.innerHTML = `${habilidade4Ceifador.Tipo}<br><br>
+${habilidade4Ceifador.Alcance}<br><br>
+${habilidade4Ceifador.Energia}<br><br>
+${habilidade4Ceifador.Recarga}<br><br>`
+
+
+
+var habilidade5Ceifador = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 4 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 13 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb5.innerHTML = `${habilidade5Ceifador.Tipo}<br><br>
+${habilidade5Ceifador.Alcance}<br><br>
+${habilidade5Ceifador.Energia}<br><br>
+${habilidade5Ceifador.Recarga}<br><br>`
+
+</script>

@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    min-height: 100vh;
+    background-image: url(../assets/img-dash.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    padding: 5px 15px 5px 15px;
+    background-color: transparent;
+    font-size: 20px;
+    color: #ffff;
+}
+
+a {
+    color: #ffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.usuario {
+    color: #ffff;
+    font-size: 20px;
+
+}
+
+.usuario:hover {
+    opacity: 0.7;
+}
+
+
+b {
+    border: transparent;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar-lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.navbar-lista li {
+    letter-spacing: 3px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+.logo a {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-size: 20px;
+    background: rgb(16,15,75);
+    height: 15vh;
+}
+
+.container {
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.resultQuiz {
+    width: 30%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url(../assets/imgs-tela/background-image.png);
+}
+
+.titleQuiz {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 32px;
+    color: #ffff;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 15 15 15 15;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+.card2 {
+    width: 80%;
+    min-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+.valoresQuiz {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    font-weight: 400;
+    font-size: 32px;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 15 15 15 15;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+.card {
+    width: 60%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url(../assets/imgs-tela/background-image.png);
+    background-clip: padding-box;
+}
+
+.parteCima {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 15 15 15 15;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+.parteBaixo {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 15 15 15 15;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}
+
+.imagem {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem img {
+    width: 50%;
+}
+
+.grafico {
+    width: 75%;
+    height: 95%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../assets/imgs-tela/background-image.png);
+    border-image-source: url(../assets/img-classes/border-image.png);
+    border-image-repeat: repeat;
+    border-image-slice: 15 15 15 15;
+    border-image-width: 13px;
+    border-width: 15px;
+    background-clip: padding-box;
+}

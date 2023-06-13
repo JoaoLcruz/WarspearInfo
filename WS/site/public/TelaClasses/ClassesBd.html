@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleClassePt2.css">
+    <title>Document</title>
+</head>
+<body>
+    <header >
+            <nav class="navbar">
+                <a href="./index.html" class="logo">Waspear Info</a>
+                <ul class="navbar-lista">
+                    <li>
+                        <a href="../index.html" class="liCk-navbar"><b>Sobre o jogo</b></a>
+                    </li>
+                    <li>
+                        <a id="dash" href="../dashboard/dash.html"><b>Ranks</b></a>
+                    </li>
+                    <li>
+                        <a id="idQuiz" href="../quiz.html" class="link-navbar"><b>Quiz</b></a>
+                    </li>
+                    <li>
+                        <a href="../mapas.html" class="link-navbar"><b>Mapas</b></a>
+                    </li>
+                    <li id="mudartudo">
+                        <a  href="../login.html"><img src="../assets/imgs-tela/knight_helmet_icon_126599.png" alt="login"></a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <div class="conteiner">
+        <div class="voltar">
+            <a href="./Classes.html">Voltar</a>
+        </div>
+        <div class="card">
+            <div class="parteCima">
+                <div class="personagem">
+                    <div class="tituloClasse">
+                        <b>Dançarino da Lâmina</b>
+                    </div> 
+                        <img src="./img-classes/blade.PNG" alt="bd">
+                </div>
+                <div class="grafico">
+                    <canvas id="myChart" ></canvas>
+                </div>
+                <div class="gifClasse">
+                    <img src="./gif-classes/bd.gif" alt="gif bd">
+                </div>
+            </div>
+            <div class="baixo">
+                        <div class="status" id="personagem2Status"></div>
+                <div class="parteBaixo2">
+                    <div class="texto2" id="texto">
+                        <span style="color: rgb(255, 9, 9);">SOBRE:</span>  <br> <br>
+                        <b> 
+                            Dançarinos da Lâmina são Espadachins élficos. Devido à sua longa expectativa de vida, os Primogênitos têm abundância de tempo para aprimorarem seu 
+                            domínio da espada. As lâminas em forma crescente prestam homenagem à Divindade Nuadu - o criador dos Primogênitos.Os quatro melhores Dançarinos da 
+                            Lâmina estão incluídos no Conselho dos Doze que rege todos os elfos nas florestas de Melwendil. Eles executam as missões mais críticas do Conselho 
+                            Élfico. Dizem que um Dançarino da Lâmina pode cortar até um raio de luz em dois com sua espada.Seus inimigos tremem de terror na mira desses lutadores, 
+                            pois ninguém jamais conseguiu escapar deste furacão de lâminas brilhantes, ao menos ainda.
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Habilidades()">Habilidades</button></div>
+                    </div>
+                    <div class="textoHb" id="texto2">
+                        <span style="color: rgb(255, 9, 9);">HABILIDADES:</span>  <br> <br>
+                        <b>
+                           <img onclick="Habilidade1()" src="./img-habilidades/bd-hb1.PNG" alt="habilidade 1">
+                           <img onclick="Habilidade2()" src="./img-habilidades/bd-hb2.PNG" alt="habilidade 2">
+                           <img onclick="Habilidade3()" src="./img-habilidades/bd-hb3.PNG" alt="habilidade 3">
+                           <img onclick="Habilidade4()" src="./img-habilidades/bd-hb4.PNG" alt="habilidade 4">
+                           <img onclick="Habilidade5()" src="./img-habilidades/bd-hb5.PNG" alt="habilidade 5">
+                        </b>
+                        <div class="botao"><button class="btn" onclick="Sobre()">Sobre</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade1">
+                        <div class="tituloHb"><b>Golpe Relâmpago</b></div>
+                        <div class="statusHb" id="hb1"></div>
+                        <div class="descricao"><b><span style="color: red;;">Descrição:</span> Um ataque que causa ao adversário dano físico equivalente a 20 unidades e 140% do poder físico do personagem.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade2">
+                        <div class="tituloHb"><b>Agressão</b></div>
+                        <div class="statusHb" id="hb2"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Um ataque que causa dano físico ao alvo equivalente a 105% da força física do personagem a todos os inimigos dentro de um raio de 1 metro ao redor do personagem. Os alvos sob o efeito "Sangramento" recebem 15% a mais de dano da habilidade. O número máximo de jogadores-alvo é de 3, de monstros-alvo é de 6.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade3">
+                        <div class="tituloHb"><b>Aparo</b></div>
+                        <div class="statusHb" id="hb3"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Aplica o auxílio "Aparo" no personagem por 20s. O efeito aumenta o parâmetro "Aparo" em 4%.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade4">
+                        <div class="tituloHb"><b>Aturdir</b></div>
+                        <div class="statusHb" id="hb4"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa a penalidade "Atordoamento" ao inimigo por 7s. O efeito reduz em 15% o poder mágico e a força física e o parâmetro "Velocidade de ataque" em 12%.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                    <div class="habilidade" id="habilidade5">
+                        <div class="tituloHb"><b>Cortar Tendão</b></div>
+                        <div class="statusHb" id="hb5"></div>
+                        <div class="descricao"><b><span style="color: red;">Descrição:</span> Causa o efeito “Ferida Profunda” no inimigo por 3s e o efeito "Sangramento" por 6s. O efeito "Ferida Profunda" impede o movimento e o uso de habilidades. O efeito "Sangramento" causa dano físico equivalente a 30% da força física do personagem a cada 2s.
+                        </b> <button onclick="Voltar()" class="btn">Voltar</button></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script src="./logout.js"></script>
+<script src="./funcaoClasses.js"></script>
+<script>
+    // jsons para o necro
+
+var personagem = {
+    Facção: 'Facção: Primogênitos',
+    Armadura: 'Armadura: pesada, leve',
+    Armas: 'Armas: machados de uma mão/duas mãos, espadas de uma mão/duas mãos, adaga',
+    Função: 'Função: enfraquecer inimigos / causar dano (dmg)'
+    
+}
+personagem2Status.innerHTML = `${personagem.Facção}<br><br>
+${personagem.Armadura}<br><br>
+${personagem.Armas}<br><br>
+${personagem.Função}`
+
+
+
+var habilidade1Bd = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 12 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 10s</span>'
+}
+hb1.innerHTML = `${habilidade1Bd.Tipo}<br><br>
+${habilidade1Bd.Alcance}<br><br>
+${habilidade1Bd.Energia}<br><br>
+${habilidade1Bd.Recarga}<br><br>`
+
+
+
+var habilidade2Bd = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 1 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 8 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 14s</span>'
+}
+hb2.innerHTML = `${habilidade2Bd.Tipo}<br><br>
+${habilidade2Bd.Alcance}<br><br>
+${habilidade2Bd.Energia}<br><br>
+${habilidade2Bd.Recarga}<br><br>`
+
+
+
+var habilidade3Bd = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> No personagem</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 17 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 30s</span>'
+}
+hb3.innerHTML = `${habilidade3Bd.Tipo}<br><br>
+${habilidade3Bd.Alcance}<br><br>
+${habilidade3Bd.Energia}<br><br>
+${habilidade3Bd.Recarga}<br><br>`
+
+
+
+var habilidade4Bd = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> Corpo a corpo</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 15 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb4.innerHTML = `${habilidade4Bd.Tipo}<br><br>
+${habilidade4Bd.Alcance}<br><br>
+${habilidade4Bd.Energia}<br><br>
+${habilidade4Bd.Recarga}<br><br>`
+
+
+
+var habilidade5Bd = {
+    Tipo: 'Tipo: <span style="color: yellowgreen;"> Ativo</span>',
+    Alcance: 'Alcance de Uso:<span style="color: yellowgreen;"> 2 metros</span>',
+    Energia: 'Gasto em energia:<span style="color: yellowgreen;"> 15 unidades</span> ',
+    Recarga: 'Recarga: <span style="color: yellowgreen;"> 15s</span>'
+}
+hb5.innerHTML = `${habilidade5Bd.Tipo}<br><br>
+${habilidade5Bd.Alcance}<br><br>
+${habilidade5Bd.Energia}<br><br>
+${habilidade5Bd.Recarga}<br><br>`
+</script>
