@@ -41,19 +41,11 @@ CREATE TABLE quiz (
     constraint fkUsuario foreign key (fkUsuario) references usuario(idUsuario)
 );
 
-INSERT INTO usuario VALUES (null, 'matheus', 'matheus@gmail.com', '123', 2, 2);
-INSERT INTO faccao (NomeFaccao) VALUES ('Legião');
-INSERT INTO raca (NomeRaca) VALUES ('Proscritos');
 
 select * from raca;
 select * from faccao;
 select * from usuario;
 select * from quiz;
-
--- SELECT Equipe.nome,COUNT(*) AS Votos
--- FROM Cadastro join Equipe on Voto_equipe = id_equipe
--- GROUP BY Voto_equipe;
-
 
 select count(Fkfaccao) as qtdVotos , NomeFaccao as Faccao from usuario u join faccao f on Fkfaccao = idFaccao group by Fkfaccao;
 
@@ -61,10 +53,7 @@ select count(FkRaca) as qtdVotos2 , NomeRaca as Raca from usuario u join raca r 
 
 select * from usuario join faccao on Fkfaccao = idFaccao join raca on FkRaca = idRaca join quiz on fkUsuario = idUsuario;
 
-drop table if exists usuario;
-drop table if exists faccao;
-drop table if exists raca;
-drop database if exists WarspearInfo;
+select nome, sum(pontos) as pto from quiz join usuario on fkUsuario = idUsuario group by nome order by pto desc;
 
 INSERT INTO usuario (nome, email, senha, Fkfaccao, FkRaca) VALUES
 ('JoÃ£o Silva', 'joao.silva@gmail.com', 'senha123', 1, 1),
@@ -73,3 +62,10 @@ INSERT INTO usuario (nome, email, senha, Fkfaccao, FkRaca) VALUES
 ('Ana Souza', 'ana.souza@gmail.com', 'senha123', 2, 4),
 ('Lucas Pereira', 'lucas.pereira@hotmail.com', 'senha456', 1, 3),
 ('Julia Costa', 'julia.costa@yahoo.com', 'senha789', 2, 1);
+
+
+
+drop table if exists usuario;
+drop table if exists faccao;
+drop table if exists raca;
+drop database if exists WarspearInfo;
